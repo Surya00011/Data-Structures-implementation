@@ -3,7 +3,7 @@
 Welcome to the **Data Structures Implementation** repository!  
 This project contains clean, well-commented Java implementations of core data structures that are essential for mastering algorithms and cracking technical interviews.
 
-## StackDS?
+## StackDS
 
 - Stack using Object Arrays
 - Stack using Generics (`<E>`)
