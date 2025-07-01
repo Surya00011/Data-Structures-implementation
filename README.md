@@ -1,7 +1,7 @@
 # Data Structures Implementations in Java
 
 Welcome to the **Data Structures Implementation** repository!  
-This project contains clean, well-commented Java implementations of core data structures that are essential for mastering algorithms and cracking technical interviews.
+This project contains clean, well-structured Java implementations of core data structures that are essential for mastering algorithms.
 
 ## StackDS
 
