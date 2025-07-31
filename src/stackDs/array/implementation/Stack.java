@@ -19,6 +19,12 @@ public class Stack<E> implements Iterable<E>{
         }
         stackArray=tempArray;
     }
+
+    /**
+     *
+     * @param element Element to be pushed
+     *
+     */
     public void push(E element){
         if(index==capacity){
             increseCapacity();
