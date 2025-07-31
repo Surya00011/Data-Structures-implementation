@@ -47,6 +47,10 @@ public class LinkedList<E> {
         return removed;
     }
 
+    public boolean isEmpty(){
+        return head==null;
+    }
+
     public E removeFirst() {
         if(head==null) {
             throw new EmptyListException("LinkedList is empty");

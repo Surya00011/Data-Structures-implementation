@@ -12,6 +12,7 @@ public class Main {
         System.out.println(list.remove(0));
         System.out.println(list.removeFirst());
         System.out.println(list.removeLast());
+        System.out.println(list.isEmpty());
         System.out.println(list);
     }
 }
