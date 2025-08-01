@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class LinkedList<E> implements Iterable<E>{
-    private Node head;
+    private Node<E> head;
 
     public LinkedList(){
 
@@ -24,7 +24,7 @@ public class LinkedList<E> implements Iterable<E>{
 
     private static class Node<E> {
         E element;
-        Node next;
+        Node<E> next;
         public Node(E element) {
             this.element = element;
             this.next=null;
@@ -32,7 +32,7 @@ public class LinkedList<E> implements Iterable<E>{
     }
 
     public void addFirst(E element) {
-        Node newNode = new Node(element);
+        Node<E> newNode = new Node<>(element);
         newNode.next=head;
         head=newNode;
     }
@@ -41,13 +41,13 @@ public class LinkedList<E> implements Iterable<E>{
         if(isEmpty()) {
             addFirst(element);
         } else {
-            Node temp=head;
-            Node currentLast;
+            Node<E> temp=head;
+            Node<E> currentLast;
             while(temp.next!=null) {
                 temp=temp.next;
             }
             currentLast=temp;
-            Node newLast = new Node(element);
+            Node<E> newLast = new Node<>(element);
             currentLast.next=newLast;
         }
     }
@@ -57,7 +57,7 @@ public class LinkedList<E> implements Iterable<E>{
         if(index==0) {
             removed=removeFirst();
         } else {
-            Node temp=head;
+            Node<E> temp=head;
             for(int i=0; i<index-1; i++) {
                 temp=temp.next;
             }
@@ -79,17 +79,17 @@ public class LinkedList<E> implements Iterable<E>{
             addFirst(element);
         }
         else if(index == 0) {
-            Node newNode = new Node(element);
+            Node<E> newNode = new Node<E>(element);
             newNode.next =head;
             head=newNode;
         }
         else {
-            Node prev = head;
+            Node<E> prev = head;
             for(int i=0; i<index-1; i++) {
                 prev=prev.next;
             }
-            Node temp = prev.next;
-            Node newNode = new Node(element);
+            Node<E> temp = prev.next;
+            Node<E> newNode = new Node<>(element);
             newNode.next = temp;
             prev.next = newNode;
         }
@@ -103,7 +103,7 @@ public class LinkedList<E> implements Iterable<E>{
         return removed;
     }
     public boolean contains(E element){
-        Node temp = head;
+        Node<E> temp = head;
         while(temp != null){
             if(temp.element==element){
                 return true;
@@ -121,7 +121,7 @@ public class LinkedList<E> implements Iterable<E>{
             return removeFirst();
         }
 
-        Node temp = head;
+        Node<E> temp = head;
         while (temp.next.next != null) {
             temp = temp.next;
         }
@@ -143,7 +143,7 @@ public class LinkedList<E> implements Iterable<E>{
             throw new IndexOutOfBoundsException("Index cannot be negative: " + index);
         }
 
-        Node temp = head;
+        Node<E> temp = head;
         for (int i = 0; i < index; i++) {
             if (temp == null) {
                 throw new IndexOutOfBoundsException("Index out of range: " + index);
@@ -168,7 +168,7 @@ public class LinkedList<E> implements Iterable<E>{
         if(isEmpty()){
             throw new EmptyListException("LinkedList is empty");
         }
-        Node temp = head;
+        Node<E> temp = head;
         while(temp.next != null){
             temp=temp.next;
         }
@@ -182,7 +182,7 @@ public class LinkedList<E> implements Iterable<E>{
     }
     public int size() {
         int count = 0;
-        Node temp = head;
+        Node<E> temp = head;
         while (temp != null) {
             count++;
             temp = temp.next;
@@ -194,7 +194,7 @@ public class LinkedList<E> implements Iterable<E>{
         if(isEmpty()){
             throw new EmptyListException("LinkedList is empty");
         }
-        Node temp = head;
+        Node<E> temp = head;
         int index=0;
 
         while(temp != null){
@@ -210,9 +210,9 @@ public class LinkedList<E> implements Iterable<E>{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Node temp = head;
+        Node<E> temp = head;
         while(temp != null) {
-            sb.append(temp.element+" -> ");
+            sb.append(temp.element).append(" -> ");
             temp= temp.next;
         }
         sb.append("null");
@@ -222,7 +222,7 @@ public class LinkedList<E> implements Iterable<E>{
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
-            Node current = head;
+            Node<E> current = head;
 
             @Override
             public boolean hasNext() {

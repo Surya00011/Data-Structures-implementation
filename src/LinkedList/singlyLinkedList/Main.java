@@ -31,7 +31,7 @@ public class Main {
         System.out.println(list.getLast());
         System.out.println("Size"+list.size());
         list.addAll(List.of(23,45,56));
-        list.indexOf(23);
+        System.out.println("Index of"+ list.indexOf(23));
         System.out.println(list);
         list.forEach(System.out::println);
         list.clear();
