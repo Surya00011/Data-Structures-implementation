@@ -1,7 +1,10 @@
 package LinkedList.singlyLinkedList;
 
 import java.util.Collection;
-public class LinkedList<E> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class LinkedList<E> implements Iterable<E>{
     private Node head;
 
     public LinkedList(){
@@ -155,6 +158,55 @@ public class LinkedList<E> {
         return (E) temp.element;
     }
 
+    public E getFirst(){
+        if(isEmpty()){
+            throw new EmptyListException("LinkedList is empty");
+        }
+        return (E) head.element;
+    }
+    public E getLast(){
+        if(isEmpty()){
+            throw new EmptyListException("LinkedList is empty");
+        }
+        Node temp = head;
+        while(temp.next != null){
+            temp=temp.next;
+        }
+        return (E) temp.element;
+    }
+
+    public void addAll(Collection<E> collection){
+        for(E element : collection){
+            addLast(element);
+        }
+    }
+    public int size() {
+        int count = 0;
+        Node temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
+    public int indexOf(E element){
+        if(isEmpty()){
+            throw new EmptyListException("LinkedList is empty");
+        }
+        Node temp = head;
+        int index=0;
+
+        while(temp != null){
+            if(temp.element == element){
+                return index;
+            }
+            index++;
+            temp=temp.next;
+        }
+        return -1;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -165,6 +217,28 @@ public class LinkedList<E> {
         }
         sb.append("null");
         return sb.toString();
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            Node current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                E data = (E) current.element;
+                current = current.next;
+                return data;
+            }
+        };
     }
 
 }

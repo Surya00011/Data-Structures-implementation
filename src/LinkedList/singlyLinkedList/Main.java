@@ -1,5 +1,7 @@
 package LinkedList.singlyLinkedList;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
@@ -23,7 +25,15 @@ public class Main {
         strList.add(1,"Hello");
         System.out.println(strList);
         System.out.println(strList.contains("Surya"));
-        System.out.println(list.get(0));
+        System.out.println("Element at index "+list.get(0));
+        System.out.println("First Element "+list.getFirst());
+        System.out.println("Last Element "+strList.getLast());
+        System.out.println(list.getLast());
+        System.out.println("Size"+list.size());
+        list.addAll(List.of(23,45,56));
+        list.indexOf(23);
+        System.out.println(list);
+        list.forEach(System.out::println);
         list.clear();
         strList.clear();
     }
