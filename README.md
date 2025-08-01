@@ -18,6 +18,7 @@ This project contains clean, well-structured Java implementations of core data s
 
 - LinkedList using Generics(`<E>`)
 - Custom `EmptyListException`
-- Operations `addFirst,addLast,remove,removeLast,removeFirst,isEmpty`
+- Operations `addFirst,addLast,remove,removeLast,removeFirst,isEmpty,get,clear,contains`
+- Constructor `default constructor,Collection,Array`
 - `toString()` to print List content
 - Sample `main()` class to test the LinkedList
