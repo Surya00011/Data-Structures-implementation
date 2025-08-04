@@ -62,17 +62,17 @@ public class LinkedList<E> implements Iterable<E>{
         if (head.element.equals(element)) {
             removed = removeFirst();
         }
-
-        Node<E> prev = head;
-        while (prev.next != null) {
-            if (prev.next.element.equals(element)) {
-                removed = (E) prev.next.element;
-                prev.next = prev.next.next;
-            }else {
-                prev = prev.next;
+        else {
+            Node<E> prev = head;
+            while (prev.next != null) {
+                if (prev.next.element.equals(element)) {
+                    removed = (E) prev.next.element;
+                    prev.next = prev.next.next;
+                } else {
+                    prev = prev.next;
+                }
             }
         }
-
         return removed;
     }
 

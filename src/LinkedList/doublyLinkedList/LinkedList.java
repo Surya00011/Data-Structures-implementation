@@ -96,6 +96,7 @@ public class LinkedList<E> implements Iterable<E>{
         }
         if(size()==1){
             removed = (E) removeFirst();
+            clear();
         }else{
             while(prev.next.next != null){
                 prev=prev.next;
@@ -107,7 +108,7 @@ public class LinkedList<E> implements Iterable<E>{
         return removed;
     }
 
-    public E removeAtIndex(int index){
+    public E removeByIndex(int index){
         E removed = null;
         if(isEmpty()){
             throw new EmptyListException("List is empty");
@@ -139,25 +140,95 @@ public class LinkedList<E> implements Iterable<E>{
         if (head.element.equals(element)) {
             removed = removeFirst();
         }
-
-        Node<E> prev = head;
-        while(prev.next != null) {
-            if(prev.next.element.equals(element)) {
-                removed = (E) prev.next.element;
-                prev.next.prev=prev;
-                prev.next=prev.next.next;
-                size--;
-            } else {
-                prev= prev.next;
+        else {
+            Node<E> prev = head;
+            while (prev.next != null) {
+                if (prev.next.element.equals(element)) {
+                    removed = (E) prev.next.element;
+                    prev.next.prev = prev;
+                    prev.next = prev.next.next;
+                    size--;
+                } else {
+                    prev = prev.next;
+                }
             }
         }
         return removed;
+    }
+    public E getFirst() {
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        return (E) head.element;
+    }
+
+    public E getLast() {
+        Node<E> temp = head;
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        if(size()==1) {
+            return getFirst();
+        } else {
+            while(temp.next!=null) {
+                temp=temp.next;
+            }
+        }
+        return (E) temp.element;
+    }
+
+    public  E get(int index){
+        if (isEmpty()){
+            throw new EmptyListException("List is empty");
+        }
+        if(index>=size || index < -1){
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
+        Node<E> temp = head;
+        for(int i=0;i<index;i++){
+           temp=temp.next;
+        }
+        return (E) temp.element;
+    }
+
+    public boolean contains(E element) {
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        Node<E> temp = head;
+        while(temp != null) {
+            if(temp.element.equals(element)) {
+                return true;
+            } else {
+                temp=temp.next;
+            }
+        }
+        return false;
+    }
+
+    public int indexOf(E element) {
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        Node<E> temp = head;
+        int index = -1;
+        while(temp != null){
+            if(temp.element.equals(element)){
+                return ++index;
+            }else{
+                temp=temp.next;
+                ++index;
+            }
+        }
+        return -1;
     }
 
     public boolean isEmpty() {
         return head==null;
     }
-
+    public void clear(){
+        head=null;
+    }
     public int size(){
         return size;
     }
