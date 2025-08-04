@@ -16,7 +16,7 @@ This project contains clean, well-structured Java implementations of core data s
 
 ## LinkedList 
 
-- ### Singly LinkedList
+### Singly LinkedList
 - SinglyLinkedList using Generics(`<E>`)
 - Custom `EmptyListException`
 - Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,clear,contains,addAll,size,indexOf`
@@ -25,7 +25,7 @@ This project contains clean, well-structured Java implementations of core data s
 - `Iterator` support for enhanced `for-each` loops
 - Sample `main()` class to test the LinkedList
 
-- ### Doubly LinkedList
+### Doubly LinkedList
 - SinglyLinkedList using Generics(`<E>`)
 - Custom `EmptyListException`
 - Operations `addFirst,addLast,addAtIndex,isEmpty,size,clear`
