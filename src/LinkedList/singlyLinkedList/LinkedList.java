@@ -16,7 +16,7 @@ public class LinkedList<E> implements Iterable<E>{
             addLast(element);
         }
     }
-    public LinkedList(Collection<? extends E> c) {
+    public LinkedList(Iterable<? extends E> c) {
         for (E element : c) {
             addLast(element);
         }
@@ -52,11 +52,43 @@ public class LinkedList<E> implements Iterable<E>{
         }
     }
 
-    public E remove(int index) {
+
+    public E remove(E element) {
+        if (isEmpty()) {
+             throw new EmptyListException("LinkedList is empty");
+        }
+
+        if (head.element.equals(element)) {
+            E removed = (E) head.element;
+            head = head.next;
+            return removed;
+        }
+
+        Node<E> prev = head;
+        while (prev.next != null) {
+            if (prev.next.element.equals(element)) {
+                E removed = (E) prev.next.element;
+                prev.next = prev.next.next;
+                return removed;
+            }
+            prev = prev.next;
+        }
+
+        return null;
+    }
+
+    public E removeByIndex(int index) {
         E removed=null;
+        if(isEmpty()){
+            throw  new EmptyListException("LinkedList is empty");
+        }
         if(index==0) {
             removed=removeFirst();
-        } else {
+        }
+        if(index>size() || index<0){
+            throw  new IndexOutOfBoundsException("Index out of range");
+        }
+        else  {
             Node<E> temp=head;
             for(int i=0; i<index-1; i++) {
                 temp=temp.next;
@@ -70,7 +102,6 @@ public class LinkedList<E> implements Iterable<E>{
     public boolean isEmpty(){
         return head==null;
     }
-
     public void add(E element){
         addLast(element);
     }
@@ -240,5 +271,4 @@ public class LinkedList<E> implements Iterable<E>{
             }
         };
     }
-
 }

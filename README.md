@@ -14,12 +14,24 @@ This project contains clean, well-structured Java implementations of core data s
 - Sample `main()` class to test the stack
 - Example `stack` problem
 
-## LinkedList (Singly LinkedList)
+## LinkedList 
 
-- LinkedList using Generics(`<E>`)
+- ### Singly LinkedList
+- SinglyLinkedList using Generics(`<E>`)
 - Custom `EmptyListException`
-- Operations `addFirst,addLast,remove,removeLast,removeFirst,isEmpty,get,clear,contains,addAll,size,indexOf`
-- Constructor `default constructor,Collection,Array`
+- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,clear,contains,addAll,size,indexOf`
+- Constructor `default constructor,Iterable,Array`
 - `toString()` to print List content
 - `Iterator` support for enhanced `for-each` loops
 - Sample `main()` class to test the LinkedList
+
+- ### Doubly LinkedList
+- SinglyLinkedList using Generics(`<E>`)
+- Custom `EmptyListException`
+- Operations `addFirst,addLast,addAtIndex,isEmpty,size,clear`
+- Constructor `default constructor,Iterable`
+- `toString()` to print List content
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the LinkedList
+
+

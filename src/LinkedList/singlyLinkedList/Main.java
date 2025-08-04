@@ -14,7 +14,7 @@ public class Main {
         list.add(2,67);
         list.add(0,90);
         list.add(56);
-        System.out.println(list.remove(0));
+        System.out.println(list.removeByIndex(0));
         System.out.println(list.removeFirst());
         System.out.println(list.removeLast());
         System.out.println(list.isEmpty());
@@ -29,11 +29,15 @@ public class Main {
         System.out.println("First Element "+list.getFirst());
         System.out.println("Last Element "+strList.getLast());
         System.out.println(list.getLast());
-        System.out.println("Size"+list.size());
+        System.out.println("Size "+list.size());
+        System.out.println(strList.remove("Surya"));
+        System.out.println(strList);
         list.addAll(List.of(23,45,56));
-        System.out.println("Index of"+ list.indexOf(23));
+        System.out.println("Index of "+ list.indexOf(23));
         System.out.println(list);
         list.forEach(System.out::println);
+        System.out.println(list.remove(56));
+        System.out.println(list);
         list.clear();
         strList.clear();
     }
