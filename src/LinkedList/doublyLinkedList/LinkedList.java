@@ -1,8 +1,10 @@
 package LinkedList.doublyLinkedList;
 
+import LinkedList.listInterface.List;
+
 import java.util.Iterator;
 
-public class LinkedList<E> implements Iterable<E>{
+public class LinkedList<E> implements Iterable<E>, List<E> {
     Node<E> head;
     int size=0;
 
@@ -221,6 +223,12 @@ public class LinkedList<E> implements Iterable<E>{
             }
         }
         return -1;
+    }
+
+    public void addAll(Iterable<? extends E> collection) {
+        for(E element : collection) {
+            addLast(element);
+        }
     }
 
     public boolean isEmpty() {

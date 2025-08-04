@@ -1,19 +1,17 @@
 package LinkedList.singlyLinkedList;
 
-import java.util.List;
-
+import LinkedList.listInterface.List;
 public class Main {
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
+        List<Integer> list = new LinkedList<>();
         list.addFirst(12);
         list.addFirst(11);
         list.addFirst(23);
         list.addLast(34);
         list.addLast(89);
         list.addFirst(35);
-        list.add(2,67);
-        list.add(0,90);
-        list.add(56);
+        list.addAtIndex(2,67);
+        list.addAtIndex(0,90);
         System.out.println(list.removeByIndex(0));
         System.out.println(list.removeFirst());
         System.out.println(list.removeLast());
@@ -22,7 +20,7 @@ public class Main {
         LinkedList<String> strList = new LinkedList<>();
         strList.addFirst("Surya");
         strList.addLast("Super");
-        strList.add(1,"Hello");
+        strList.addAtIndex(1,"Hello");
         System.out.println(strList);
         System.out.println(strList.contains("Surya"));
         System.out.println("Element at index "+list.get(0));
@@ -32,10 +30,9 @@ public class Main {
         System.out.println("Size "+list.size());
         System.out.println(strList.remove("Surya"));
         System.out.println(strList);
-        list.addAll(List.of(23,45,56));
+        list.addAll(java.util.List.of(23,45,56));
         System.out.println("Index of "+ list.indexOf(23));
         System.out.println(list);
-        list.forEach(System.out::println);
         System.out.println(list.remove(56));
         System.out.println(list);
         list.clear();

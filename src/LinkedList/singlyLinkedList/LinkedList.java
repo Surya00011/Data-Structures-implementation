@@ -1,10 +1,12 @@
 package LinkedList.singlyLinkedList;
 
-import java.util.Collection;
+import LinkedList.listInterface.List;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LinkedList<E> implements Iterable<E>{
+
+public class LinkedList<E> implements List<E> {
     private Node<E> head;
 
     public LinkedList(){
@@ -30,6 +32,7 @@ public class LinkedList<E> implements Iterable<E>{
             this.next=null;
         }
     }
+
 
     public void addFirst(E element) {
         Node<E> newNode = new Node<>(element);
@@ -101,10 +104,8 @@ public class LinkedList<E> implements Iterable<E>{
     public boolean isEmpty(){
         return head==null;
     }
-    public void add(E element){
-        addLast(element);
-    }
-    public void add(int index,E element) {
+
+    public void addAtIndex(int index, E element) {
         if(isEmpty()){
             addFirst(element);
         }
@@ -205,7 +206,7 @@ public class LinkedList<E> implements Iterable<E>{
         return (E) temp.element;
     }
 
-    public void addAll(Collection<E> collection){
+    public void addAll(Iterable<? extends E> collection){
         for(E element : collection){
             addLast(element);
         }
