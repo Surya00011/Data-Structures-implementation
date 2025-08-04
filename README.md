@@ -20,7 +20,7 @@ This project contains clean, well-structured Java implementations of core data s
 ### Singly LinkedList
 - SinglyLinkedList using Generics(`<E>`)
 - Custom `EmptyListException`
-- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,clear,contains,addAll,size,indexOf`
+- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,getFirst,getLast,clear,contains,addAll,size,indexOf`
 - Constructor `default constructor,Iterable,Array`
 - `toString()` to print List content
 - `Iterator` support for enhanced `for-each` loops
@@ -29,7 +29,7 @@ This project contains clean, well-structured Java implementations of core data s
 ### Doubly LinkedList
 - SinglyLinkedList using Generics(`<E>`)
 - Custom `EmptyListException`
-- Operations `addFirst,addLast,addAtIndex,isEmpty,size,clear`
+- Operations `addFirst,addLast,addAtIndex,remove,removeAtIndex,removeFirst,removeLast,isEmpty,size,clear`
 - Constructor `default constructor,Iterable`
 - `toString()` to print List content
 - `Iterator` support for enhanced `for-each` loops

@@ -70,9 +70,94 @@ public class LinkedList<E> implements Iterable<E>{
         }
     }
 
+    public E removeFirst(){
+        E removed=null;
+        if(isEmpty()){
+            throw new EmptyListException("List is empty");
+        }
+        if(size()==1){
+            removed=(E)head.element;
+            head=null;
+        }else{
+            removed = (E) head.element;
+            Node<E> tempHead = head.next;
+            tempHead.prev = null;
+            head=tempHead;
+        }
+        size--;
+        return removed;
+    }
+
+    public E removeLast(){
+        Node<E> prev = head;
+        E removed = null;
+        if(isEmpty()){
+            throw new EmptyListException("List is empty");
+        }
+        if(size()==1){
+            removed = (E) removeFirst();
+        }else{
+            while(prev.next.next != null){
+                prev=prev.next;
+            }
+            removed = (E) prev.next.element;
+            prev.next=null;
+            size--;
+        }
+        return removed;
+    }
+
+    public E removeAtIndex(int index){
+        E removed = null;
+        if(isEmpty()){
+            throw new EmptyListException("List is empty");
+        }
+        if(index>=size || index < 0){
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
+        if(index==0){
+            removed = (E) removeFirst();
+        }
+        else{
+            Node<E> prev = head;
+            for(int i=0;i<index -1;i++){
+                prev=prev.next;
+            }
+            removed = (E) prev.next.element;
+            prev.next.prev = prev;
+            prev.next = prev.next.next;
+            size--;
+        }
+        return removed;
+    }
+
+    public E remove(E element) {
+        E removed=null;
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        if (head.element.equals(element)) {
+            removed = removeFirst();
+        }
+
+        Node<E> prev = head;
+        while(prev.next != null) {
+            if(prev.next.element.equals(element)) {
+                removed = (E) prev.next.element;
+                prev.next.prev=prev;
+                prev.next=prev.next.next;
+                size--;
+            } else {
+                prev= prev.next;
+            }
+        }
+        return removed;
+    }
+
     public boolean isEmpty() {
         return head==null;
     }
+
     public int size(){
         return size;
     }

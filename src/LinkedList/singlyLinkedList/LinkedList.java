@@ -54,27 +54,26 @@ public class LinkedList<E> implements Iterable<E>{
 
 
     public E remove(E element) {
+        E removed = null;
         if (isEmpty()) {
              throw new EmptyListException("LinkedList is empty");
         }
 
         if (head.element.equals(element)) {
-            E removed = (E) head.element;
-            head = head.next;
-            return removed;
+            removed = removeFirst();
         }
 
         Node<E> prev = head;
         while (prev.next != null) {
             if (prev.next.element.equals(element)) {
-                E removed = (E) prev.next.element;
+                removed = (E) prev.next.element;
                 prev.next = prev.next.next;
-                return removed;
+            }else {
+                prev = prev.next;
             }
-            prev = prev.next;
         }
 
-        return null;
+        return removed;
     }
 
     public E removeByIndex(int index) {
