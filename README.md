@@ -5,6 +5,7 @@ This project contains clean, well-structured Java implementations of core data s
 
 ## Stack
 
+### Stack Implementation using Array
 - Stack using Object Arrays
 - Stack using Generics (`<E>`)
 - Custom `StackEmptyException`
