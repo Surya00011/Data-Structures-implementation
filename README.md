@@ -7,13 +7,22 @@ This project contains clean, well-structured Java implementations of core data s
 
 ### Stack Implementation using Array
 - Stack using Object Arrays
-- Stack using Generics (`<E>`)
+- Generic Stack<E> class (`<E>`)
 - Custom `StackEmptyException`
 - Operations `push,pop,isEmpty,peek,size,increaseCapacity`
 - `toString()` method to print stack content
 - `Iterator` support for enhanced `for-each` loops
 - Sample `main()` class to test the stack
 - Example `stack` problem
+
+### Stack Implementation using LinkedList
+- Stack using Singly LinkedList
+- Generic Stack<E> class(`<E>`)
+- Custom `EmptyStackException`
+- Operations `push,pop,isEmpty,peek,size`
+- `toString()` method to print stack content
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the stack
 
 ## LinkedList 
 
