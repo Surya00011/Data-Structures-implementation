@@ -1,5 +1,4 @@
-package stackDs.array.implementation;
-
+package stackDs.stackArrayImplemetation;
 public class Main {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();

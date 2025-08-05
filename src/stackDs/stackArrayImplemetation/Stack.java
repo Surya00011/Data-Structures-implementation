@@ -1,4 +1,4 @@
-package stackDs.array.implementation;
+package stackDs.stackArrayImplemetation;
 
 import java.util.Iterator;
 
@@ -38,7 +38,7 @@ public class Stack<E> implements Iterable<E>{
 
     public E peek(){
         if(size()==0){
-            throw new StackEmptyException("stackDs.array.implementation.Stack is empty");
+            throw new stackDs.array.implementation.StackEmptyException("stackDs.array.implementation.Stack is empty");
         }
         return stackArray[index-1];
     }
