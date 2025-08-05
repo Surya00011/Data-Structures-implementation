@@ -5,8 +5,8 @@ import LinkedList.listInterface.List;
 import java.util.Iterator;
 
 public class LinkedList<E> implements Iterable<E>, List<E> {
-    Node<E> head;
-    int size=0;
+    private Node<E> head;
+    private int size=0;
 
     private static class Node<E> {
         Node<E> prev;
@@ -120,8 +120,9 @@ public class LinkedList<E> implements Iterable<E>, List<E> {
         }
         if(index==0){
             removed = (E) removeFirst();
-        }
-        else{
+        } else if (index==size-1) {
+            removed = (E) removeLast();
+        } else{
             Node<E> prev = head;
             for(int i=0;i<index -1;i++){
                 prev=prev.next;
@@ -147,7 +148,7 @@ public class LinkedList<E> implements Iterable<E>, List<E> {
             while (prev.next != null) {
                 if (prev.next.element.equals(element)) {
                     removed = (E) prev.next.element;
-                    prev.next.prev = prev;
+                    prev.next.next.prev = prev;
                     prev.next = prev.next.next;
                     size--;
                 } else {

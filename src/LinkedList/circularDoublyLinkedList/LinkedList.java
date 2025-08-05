@@ -8,6 +8,16 @@ import java.util.Iterator;
 public class LinkedList<E> implements List<E> {
     private Node<E> head;
     private int size = 0;
+
+    public LinkedList() {
+
+    }
+    public LinkedList(Iterable<? extends E> c) {
+        for (E element : c) {
+            addLast(element);
+        }
+    }
+
     private static class Node<E>{
         E element;
         Node<E> prev;
@@ -79,7 +89,26 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public E remove(E element) {
-        return null;
+        E removed=null;
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        if (head.element.equals(element)) {
+            removed = removeFirst();
+        }else{
+            Node<E> prev = head;
+            for(int i=0;i<size;i++){
+                if (prev.next.element.equals(element)) {
+                    removed = (E) prev.next.element;
+                    prev.next.next.prev = prev;
+                    prev.next = prev.next.next;
+                    size--;
+                } else {
+                    prev = prev.next;
+                }
+            }
+        }
+        return removed;
     }
 
     @Override
@@ -116,7 +145,28 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public E removeByIndex(int index) {
-        return null;
+        E removed = null;
+        if(isEmpty()){
+            throw new EmptyListException("List is empty");
+        }
+        if(index>=size || index < 0){
+            throw new IndexOutOfBoundsException("Index out of range");
+        }
+        if(index==0){
+            removed = (E) removeFirst();
+        } else if (index==size-1) {
+            removed = (E) removeLast();
+        } else{
+            Node<E> prev = head;
+            for(int i=0;i<index -1;i++){
+                prev=prev.next;
+            }
+            removed = (E) prev.next.element;
+            prev.next.prev = prev;
+            prev.next = prev.next.next;
+            size--;
+        }
+        return removed;
     }
 
     @Override
@@ -152,7 +202,20 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public int indexOf(E element) {
-        return 0;
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        Node<E> temp=head;
+        int index = -1;
+       for(int i=0;i<size;i++){
+            if(temp.element.equals(element)){
+                return ++index;
+            }else{
+                temp=temp.next;
+                ++index;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -172,13 +235,41 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public boolean contains(E element) {
+        if(isEmpty()) {
+            throw new EmptyListException("List is empty");
+        }
+        Node<E> temp = head;
+        for(int i=0;i<size;i++){
+            if(temp.element.equals(element)) {
+                return true;
+            } else {
+                temp=temp.next;
+            }
+        }
         return false;
     }
 
     @Override
-    public Iterator iterator() {
-        return null;
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            Node<E> currentNode = head;
+            boolean firstIteration = true;
+
+            @Override
+            public boolean hasNext() {
+                return currentNode != null && (firstIteration || currentNode != head);
+            }
+
+            @Override
+            public E next() {
+                E element = currentNode.element;
+                currentNode = currentNode.next;
+                firstIteration = false;
+                return element;
+            }
+        };
     }
+
 
     @Override
     public String toString(){

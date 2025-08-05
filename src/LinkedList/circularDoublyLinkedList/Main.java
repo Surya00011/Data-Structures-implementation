@@ -23,6 +23,12 @@ public class Main {
         System.out.println(list.removeLast());
         System.out.println(list);
         System.out.println(list.removeLast());
+        System.out.println(list.removeByIndex(list.size()-1));
         System.out.println(list);
+        System.out.println(list.remove("Surya"));
+        System.out.println(list);
+        System.out.println(list.indexOf("Brok"));
+        System.out.println(list.contains("John"));
+        list.forEach(System.out::println);
     }
 }
