@@ -3,6 +3,36 @@
 Welcome to the **Data Structures Implementation** repository!  
 This project contains clean, well-structured Java implementations of core data structures that are essential for mastering algorithms.
 
+## Linked-List
+
+### Singly Linked-List
+- Generic Singly Linked-List class (`<E>`)
+- Custom `EmptyListException`
+- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,getFirst,getLast,clear,contains,addAll,size,indexOf`
+- Constructor `default constructor,Iterable,Array`
+- `toString()` to print List content
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the LinkedList
+
+### Doubly LinkedList
+- Generic Doubly Linked-List class (`<E>`)
+- Custom `EmptyListException`
+- Operations `addFirst,addLast,addAtIndex,remove,removeByIndex,removeFirst,removeLast,contains,indexOf,getFirst,getLast,get,isEmpty,size,clear, addAll`
+- Constructor `default constructor,Iterable`
+- `toString()` to print List content
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the LinkedList
+
+### Circular Doubly LinkedList
+- Generic circular doubly Linked-List class (`<E>`)
+- Custom `EmptyListException`
+- Operations `addFirst,addLast,addAtIndex,remove,removeByIndex,removeFirst,removeLast,contains,indexOf,getFirst,getLast,get,isEmpty,size,clear, addAll`
+- Constructor `default constructor,Iterable`
+- `toString()` to print List content
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the LinkedList
+
+
 ## Stack
 
 ### Stack Implementation using Array
@@ -15,8 +45,8 @@ This project contains clean, well-structured Java implementations of core data s
 - Sample `main()` class to test the stack
 - Example `stack` problem
 
-### Stack Implementation using LinkedList
-- Stack using Singly LinkedList
+### Stack Implementation using Linked-List
+- Stack using Singly Linked-List
 - Generic Stack<E> class(`<E>`)
 - Custom `EmptyStackException`
 - Operations `push,pop,isEmpty,peek,size`
@@ -24,31 +54,20 @@ This project contains clean, well-structured Java implementations of core data s
 - `Iterator` support for enhanced `for-each` loops
 - Sample `main()` class to test the stack
 
-## LinkedList 
+## Queue
 
-### Singly LinkedList
-- SinglyLinkedList using Generics(`<E>`)
-- Custom `EmptyListException`
-- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,getFirst,getLast,clear,contains,addAll,size,indexOf`
-- Constructor `default constructor,Iterable,Array`
-- `toString()` to print List content
-- `Iterator` support for enhanced `for-each` loops
-- Sample `main()` class to test the LinkedList
+### Queue using Array
+- Generic Queue class (`<E>`)
+- Operations `enqueue,dequeue,front`
+- Constructor `default constructor`
+- `toString()` to print Queue elements
+- Sample `main()` class to test the Queue
 
-### Doubly LinkedList
-- SinglyLinkedList using Generics(`<E>`)
-- Custom `EmptyListException`
-- Operations `addFirst,addLast,addAtIndex,remove,removeByIndex,removeFirst,removeLast,contains,indexOf,getFirst,getLast,get,isEmpty,size,clear, addAll`
-- Constructor `default constructor,Iterable`
-- `toString()` to print List content
+### Queue using Singly Linked-List
+- Generic Queue class(`<E>`)
+- Custom `EmptyQueueException`
+- Operations `enqueue,enqueueAll,dequeue,dequeueAll,peek,isEmpty,size`
+- Constructor `default Constructor,Iterable`
+- `toString` to print Queue elements
 - `Iterator` support for enhanced `for-each` loops
-- Sample `main()` class to test the LinkedList
-
-### Circular Doubly LinkedList
-- SinglyLinkedList using Generics(`<E>`)
-- Custom `EmptyListException`
-- Operations `addFirst,addLast,addAtIndex,remove,removeByIndex,removeFirst,removeLast,contains,indexOf,getFirst,getLast,get,isEmpty,size,clear, addAll`
-- Constructor `default constructor,Iterable`
-- `toString()` to print List content
-- `Iterator` support for enhanced `for-each` loops
-- Sample `main()` class to test the LinkedList
+- Sample `main()` class to test the Queue
