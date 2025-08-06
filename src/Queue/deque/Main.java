@@ -6,6 +6,16 @@ public class Main {
          deque.offerFirst("Surya");
          deque.offerFirst("Dutch");
          deque.offerFirst("Arthur");
-        System.out.println(deque);
+         deque.offerLast("Speed");
+         deque.offerFirst("John");
+         System.out.println(deque);
+         System.out.println("Dequeued "+ deque.pollFirst());
+         System.out.println("Dequeued "+ deque.pollLast());
+         System.out.println(deque);
+         System.out.println(deque.peekFirst());
+         System.out.println(deque.peekLast());
+         System.out.println("Dequeued "+ deque.pollFirst());
+         System.out.println("Dequeued "+ deque.pollLast());
+         System.out.println(deque);
     }
 }

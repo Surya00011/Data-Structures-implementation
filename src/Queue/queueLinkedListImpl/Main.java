@@ -8,6 +8,8 @@ public class Main {
         pplQueue.enqueue("Surya");
         pplQueue.enqueue("Arthur");
         pplQueue.enqueue("John");
+        pplQueue.enqueueAll(List.of("Dutch","Abigal","Roberts","RDR2"));
+        System.out.println(pplQueue.size());
         Queue<String> duplicate = new Queue<>(pplQueue);
         pplQueue.forEach(System.out::println);
         System.out.println(pplQueue);
@@ -17,5 +19,6 @@ public class Main {
         System.out.println("Peek: "+pplQueue.peek());
         List<String> dequeuedList = duplicate.dequeueAll();
         System.out.println(dequeuedList);
+
     }
 }

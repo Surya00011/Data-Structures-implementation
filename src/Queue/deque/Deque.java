@@ -28,6 +28,62 @@ public class Deque <E>{
         size++;
     }
 
+    public void offerLast(E element){
+        if(isEmpty()){
+            offerFirst(element);
+        }else{
+            Node<E> newNode = new Node<>(element);
+            rear.next = newNode;
+            newNode.prev = rear;
+            rear=newNode;
+        }
+        size++;
+    }
+
+    public E peekFirst(){
+        if (isEmpty()){
+            throw new EmptyDequeException("Queue is empty");
+        }
+        return (E) front.element;
+    }
+
+    public E peekLast(){
+        if(isEmpty()){
+            throw new EmptyDequeException("Queue is empty");
+        }
+        return (E) rear.element;
+    }
+
+    public E pollFirst(){
+        if(isEmpty()){
+            throw new EmptyDequeException("Queue is empty");
+        }
+        E removed = (E) front.element;
+        if(front==rear){
+            front = rear = null;
+        }else {
+            front = front.next;
+            front.prev = null;
+        }
+        size--;
+        return removed;
+    }
+
+    public E pollLast(){
+        if(isEmpty()){
+            throw new EmptyDequeException("Queue is empty");
+        }
+        E removed = (E) rear.element;
+        if(front == rear){
+            front = rear = null;
+        }else{
+            rear=rear.prev;
+            rear.next=null;
+        }
+        size--;
+        return removed;
+    }
+
     public int size(){
         return size;
     }
@@ -38,10 +94,17 @@ public class Deque <E>{
 
     @Override
     public String toString(){
+        if(isEmpty()){
+            return null;
+        }
         StringBuilder sb = new StringBuilder("(FRONT)==> ");
         Node<E> temp =front;
         while(temp != null){
-            sb.append(temp.element).append(" <-> ");
+            if(temp.next!=null) {
+                sb.append(temp.element).append(" <-> ");
+            }else {
+                sb.append(temp.element).append(" <==");
+            }
             temp=temp.next;
         }
         sb.append("(REAR)");

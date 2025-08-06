@@ -38,6 +38,7 @@ public class Queue<E> implements Iterable<E>{
         size++;
     }
 
+
     public E peek(){
         if(isEmpty()){
             throw new EmptyQueueException("Queue is empty");
@@ -79,10 +80,17 @@ public class Queue<E> implements Iterable<E>{
     }
     @Override
     public String toString(){
+        if (isEmpty()){
+            return null;
+        }
         StringBuilder sb = new StringBuilder("(FRONT) ==> ");
         Node<E> temp = front;
         while(temp != null){
-            sb.append(temp.element).append(" <- ");
+            if(temp.next!=null){
+                sb.append(temp.element).append(" <- ");
+            }else {
+                sb.append(temp.element).append(" <==");
+            }
             temp=temp.next;
         }
         sb.append("(REAR)");

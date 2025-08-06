@@ -46,10 +46,10 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public void addLast(E element) {
-       Node<E> newNode = new Node<>(element);
        if (isEmpty()){
            addFirst(element);
        }else{
+           Node<E> newNode = new Node<>(element);
            head.prev.next=newNode;
            newNode.prev=head.prev;
            newNode.next=head;

@@ -71,3 +71,21 @@ This project contains clean, well-structured Java implementations of core data s
 - `toString` to print Queue elements
 - `Iterator` support for enhanced `for-each` loops
 - Sample `main()` class to test the Queue
+
+### Circular queue using Singly Linked-List
+- Generic Queue class (`<E>`)
+- Custom `EmptyQueueException`
+- Operations `enqueue,enqueueAll,dequeue,dequeueAll,peek,isEmpty,size`
+- Constructor `default Constructor,Iterable`
+- `toString` to print Queue elements
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the Queue
+
+### Deque (Double ended queue) using Doubly Linked-List
+- Generic Queue class (`<E>`)
+- Custom `EmptyDequeException`
+- Operations `offerFirst,offerLast,peekFirst,peekLast,pollFirst,pollLast,isEmpty,size`
+- Constructor `default Constructor,Iterable`
+- `toString` to print Queue elements
+- `Iterator` support for enhanced `for-each` loops
+- Sample `main()` class to test the Deque
