@@ -5,6 +5,12 @@ import LinkedList.listInterface.List;
 public class Main {
     public static void main(String[] args) {
         List<String> list = new LinkedList<>();
+        List<String> ls = new LinkedList<>();
+        ls.addFirst("Surya");
+        ls.addFirst("CSE");
+        System.out.println(ls.remove("Surya"));
+        System.out.println(ls);
+
         list.addFirst("Surya");
         list.addFirst("Kain");
         list.addFirst("Main");

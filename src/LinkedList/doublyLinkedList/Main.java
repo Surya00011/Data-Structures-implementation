@@ -13,7 +13,7 @@ public class Main {
        duplicate.addFirst("Computer Science");
        duplicate.addLast("College");
        duplicate.addAtIndex(0,"Hi");
-       //duplicate.forEach(System.out::println);
+       duplicate.forEach(System.out::println);
        duplicate.removeFirst();
        System.out.println(duplicate);
        System.out.println("Removed "+ linkedList.removeLast());
@@ -22,15 +22,19 @@ public class Main {
        System.out.println(duplicate.removeLast());
        System.out.println(duplicate.removeLast());
        System.out.println(duplicate.removeByIndex(2));
+       System.out.println(duplicate);
        System.out.println(duplicate.remove("Surya"));
+       System.out.println(duplicate);
        System.out.println(duplicate.remove("Computer Science"));
        System.out.println(duplicate);
+       System.out.println("List 1: " + list1);
        System.out.println(list1.remove("Surya"));
        System.out.println(list1.getLast());
        System.out.println(list1.getFirst());
        System.out.println(list1.get(0));
        System.out.println(list1.contains("Surya"));
        System.out.println(list1.indexOf("Surya"));
+       System.out.println(list1);
        list.clear();
        list1.clear();
        linkedList.clear();

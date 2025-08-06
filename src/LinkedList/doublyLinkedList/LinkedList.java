@@ -148,8 +148,12 @@ public class LinkedList<E> implements Iterable<E>, List<E> {
             while (prev.next != null) {
                 if (prev.next.element.equals(element)) {
                     removed = (E) prev.next.element;
-                    prev.next.next.prev = prev;
-                    prev.next = prev.next.next;
+                    if(size>2) {
+                        prev.next.next.prev = prev;
+                        prev.next = prev.next.next;
+                    }else{
+                        prev.next=null;
+                    }
                     size--;
                 } else {
                     prev = prev.next;
@@ -246,7 +250,7 @@ public class LinkedList<E> implements Iterable<E>, List<E> {
         StringBuilder sb = new StringBuilder();
         Node<E> temp = head;
         while (temp!=null) {
-            sb.append(temp.element).append("->");
+            sb.append(temp.element).append("<->");
             temp=temp.next;
         }
         sb.append("null");
