@@ -1,5 +1,8 @@
 package tree.binaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree<E>{
 
     private Node<E> root;
@@ -19,6 +22,27 @@ public class BinaryTree<E>{
     public Node<E> getRoot() {
         return root;
     }
+
+    public boolean contains(Node<E> node, E value) {
+        if (node == null) return false;
+        if (node.element.equals(value)) return true;
+        return contains(node.left, value) || contains(node.right, value);
+    }
+
+
+    public void levelOrder(Node<E> root) {
+        if (root == null) return;
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            Node<E> current = queue.poll();
+            System.out.print(current.element + " ");
+            if (current.left != null) queue.offer(current.left);
+            if (current.right != null) queue.offer(current.right);
+        }
+    }
+
 
     public Node<E> insertLeft(Node<E> parent, E data) {
         parent.left = new Node<>(data);

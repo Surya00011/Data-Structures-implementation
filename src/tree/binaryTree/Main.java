@@ -14,5 +14,10 @@ public class Main {
         System.out.println();
         System.out.print("Postorder: ");
         tree.postOrder(tree.getRoot());
+        System.out.println();
+        System.out.print("LevelOrder: ");
+        tree.levelOrder(tree.getRoot());
+        System.out.println();
+        System.out.println(tree.contains(tree.getRoot(),"C"));
     }
 }
