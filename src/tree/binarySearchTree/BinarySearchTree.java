@@ -99,8 +99,10 @@ public class BinarySearchTree <E extends Comparable<E>>{
         }
         return false;
     }
-
-    public Node<E> delete(Node<E> root,E key){
+    public void delete(E key){
+        root = delete(root,key);
+    }
+    private Node<E> delete(Node<E> root,E key){
          if(root==null) return root;
          if(key.equals(root.key)){
              if (root.right==null){
