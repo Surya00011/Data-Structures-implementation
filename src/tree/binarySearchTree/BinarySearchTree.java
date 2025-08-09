@@ -100,6 +100,32 @@ public class BinarySearchTree <E extends Comparable<E>>{
         return false;
     }
 
+    public Node<E> delete(Node<E> root,E key){
+         if(root==null) return root;
+         if(key.equals(root.key)){
+             if (root.right==null){
+                 return root.left;
+             }else if(root.left==null){
+                 return root.right;
+             }else{
+                 root.key= findMin(root.right ,key);
+                 root.right=delete(root.right, root.key);
+             }
+         }
+         if(key.compareTo(root.key)>0) root.right = delete(root.right,key);
+         root.left = delete(root.left,key);
+         return root;
+    }
+
+    private E findMin(Node<E> root, E key){
+        E min = root.key;
+        while (root.left != null){
+            min = root.left.key;
+            root=root.left;
+        }
+        return min;
+    }
+
     public Node<E> getRoot(){
         return root;
     }

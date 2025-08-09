@@ -14,6 +14,10 @@ public class Main {
        System.out.print("LevelOrder: ");
        tree.levelOrder(tree.getRoot());
        System.out.println();
+       tree.delete(tree.getRoot(),40);
+       System.out.print("LevelOrder: ");
+       tree.levelOrder(tree.getRoot());
+       System.out.println();
        System.out.println("PreOrder: ");
        tree.preOrder(tree.getRoot());
        System.out.println();
@@ -28,6 +32,6 @@ public class Main {
                         node -> System.out.println("Found: " + node.key),
                         () -> System.out.println("Key not found!")
                 );
-        System.out.println("isFound: "+tree.contains(tree.getRoot(),90));
+        System.out.println("isFound: "+tree.contains(tree.getRoot(),39));
     }
 }
