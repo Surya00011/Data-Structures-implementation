@@ -93,13 +93,13 @@ This project contains clean, well-structured Java implementations of core data s
 ## Tree
 
 ### Binary tree
-- Generic BinaryTree class(`<E>`)
+- Generic BinaryTree class(`<E>`) with inner node class
 - Operation `insertRight,insertLeft,inOrderTraversal,preOrderTraversal,postOrderTraversal,levelOrderTraversal,contains,construct`
 - Constructor `Constructor with one parameter to initialize root node , Constructor with parser and root`
 - sample `main()` class to test the BinaryTree
 
 ### Binary Search Tree
-- Generic BinarySearchTree class(`<E>`)
+- Generic BinarySearchTree class(`<E>`) with inner node class
 - Operation `insert,search,inOrderTraversal,preOrderTraversal,postOrderTraversal,levelOrderTraversal,contains,delete`
 - Constructor `defaut constructor,constructor with on parameter to initialize root node`
 - sample `main()` class to test the BinarySearchTree
