@@ -251,6 +251,8 @@ public class LinkedList<E> implements List<E> {
     }
 
     public void reverse(){
+        if(isEmpty())
+            throw new EmptyListException("List is empty");
         Node<E> prevNode = null;
         Node<E> currentNode = head;
         while (currentNode != null){
