@@ -12,6 +12,10 @@ public class Main {
         list.addFirst(35);
         list.addAtIndex(2,67);
         list.addAtIndex(0,90);
+        System.out.println(list);
+        System.out.println();
+        list.reverse();
+        System.out.println(list);
         System.out.println(list.removeByIndex(0));
         System.out.println(list.removeFirst());
         System.out.println(list.removeLast());

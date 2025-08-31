@@ -213,6 +213,11 @@ public class LinkedList<E> implements Iterable<E>, List<E> {
         return false;
     }
 
+    @Override
+    public void reverse() {
+
+    }
+
     public int indexOf(E element) {
         if(isEmpty()) {
             throw new EmptyListException("List is empty");

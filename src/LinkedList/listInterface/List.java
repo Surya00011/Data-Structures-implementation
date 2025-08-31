@@ -17,4 +17,5 @@ public interface List<E> extends Iterable<E>{
     boolean isEmpty();
     void clear();
     boolean contains(E element);
+    void reverse();
 }

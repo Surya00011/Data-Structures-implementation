@@ -8,7 +8,7 @@ This project contains clean, well-structured Java implementations of core data s
 ### Singly Linked-List
 - Generic Singly Linked-List class (`<E>`)
 - Custom `EmptyListException`
-- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,isEmpty,get,getFirst,getLast,clear,contains,addAll,size,indexOf`
+- Operations `addFirst,addLast,addAtIndex,removeByIndex,removeLast,removeFirst,remove,reverse,isEmpty,get,getFirst,getLast,clear,contains,addAll,size,indexOf`
 - Constructor `default constructor,Iterable,Array`
 - `toString()` to print List content
 - `Iterator` support for enhanced `for-each` loops

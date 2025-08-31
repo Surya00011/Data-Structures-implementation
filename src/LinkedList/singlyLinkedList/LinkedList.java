@@ -84,13 +84,13 @@ public class LinkedList<E> implements List<E> {
         if(isEmpty()){
             throw  new EmptyListException("LinkedList is empty");
         }
-        if(index==0) {
-            removed=removeFirst();
-        }
         if(index>size() || index<0){
             throw  new IndexOutOfBoundsException("Index out of range");
         }
-        else  {
+        if(index==0) {
+            removed=removeFirst();
+        }
+        else {
             Node<E> temp=head;
             for(int i=0; i<index-1; i++) {
                 temp=temp.next;
@@ -248,6 +248,18 @@ public class LinkedList<E> implements List<E> {
         }
         sb.append("null");
         return sb.toString();
+    }
+
+    public void reverse(){
+        Node<E> prevNode = null;
+        Node<E> currentNode = head;
+        while (currentNode != null){
+            Node<E> oldCurr = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode= oldCurr;
+        }
+        head = prevNode;
     }
 
     @Override

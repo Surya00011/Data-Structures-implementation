@@ -250,6 +250,11 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
+    public void reverse() {
+
+    }
+
+    @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
             Node<E> currentNode = head;
