@@ -90,6 +90,19 @@ This project contains clean, well-structured Java implementations of core data s
 - `Iterator` support for enhanced `for-each` loops
 - Sample `main()` class to test the Deque
 
+### Bounded Blocking Queue 
+- Generic Queue class (`<E>`)
+- Backed by singly linked list (Node-based implementation)
+- Thread-safe with `synchronized` blocks
+- Uses `Semaphore` for blocking behavior
+    - `enqueueSemaphore` → controls available slots
+    - `dequeueSemaphore` → controls available items
+- Operations: `enqueue(E element)`, `dequeue()`
+- Constructor: `default constructor`, `capacity-based constructor`
+- `toString` to print Queue elements
+- Sample `main()` class to test multiple producers and consumers
+
+
 ## Tree
 
 ### Binary tree
