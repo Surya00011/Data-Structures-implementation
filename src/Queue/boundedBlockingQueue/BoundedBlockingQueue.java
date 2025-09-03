@@ -78,6 +78,28 @@ public class BoundedBlockingQueue<E> {
         }
     }
 
+    public synchronized E peekFront() {
+        if (front == null) return null;
+        return front.element;
+    }
+
+    public synchronized E peekRear() {
+        if (rear == null) return null;
+        return rear.element;
+    }
+
+    public synchronized boolean isEmpty() {
+        return size == 0;
+    }
+
+    public synchronized boolean isFull() {
+        return size == MAX_BUFFER_SIZE;
+    }
+
+    public synchronized int getSize() {
+        return size;
+    }
+
     @Override
     public synchronized String toString() {
         StringBuilder sb = new StringBuilder("[");

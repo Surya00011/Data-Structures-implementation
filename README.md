@@ -97,7 +97,7 @@ This project contains clean, well-structured Java implementations of core data s
 - Uses `Semaphore` for blocking behavior
     - `enqueueSemaphore` → controls available slots
     - `dequeueSemaphore` → controls available items
-- Operations: `enqueue(E element)`, `dequeue()`
+- Operations: `enqueue(E element)`, `dequeue()`, `getSize()`, `isFull()`, `isEmpty()`, `peekRear()`, `peekFront()`
 - Constructor: `default constructor`, `capacity-based constructor`
 - `toString` to print Queue elements
 - Sample `main()` class to test multiple producers and consumers
